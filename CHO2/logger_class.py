@@ -14,17 +14,17 @@ class Logger(object):
         with open(self.file_name, "a") as log_file:
             log_file.write("[{0}] {1}\n".format(level, msg))
 
-    def critical(self, level, msg):
-        self._write_log("CRITICAL", msg)
+    def critical(self, msg, level="CRITICAL"):
+        self._write_log(level, msg)
 
-    def error(self, level, msg):
-        self._write_log("ERROR", msg)
+    def error(self, msg, level="ERROR"):
+        self._write_log(level, msg)
 
-    def warn(self, level, msg):
-        self._write_log("WARN", msg)
+    def warn(self, msg, level="WARN"):
+        self._write_log(level, msg)
 
-    def info(self, level, msg):
-        self._write_log("INFO", msg)
+    def info(self, msg, level="INFO"):
+        self._write_log(level, msg)
 
-    def debug(self, level, msg):
-        self._write_log("DEBUG", msg)
+    def debug(self, msg, level="DEBUG"):
+        self._write_log(level, msg)
