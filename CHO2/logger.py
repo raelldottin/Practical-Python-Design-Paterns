@@ -1,28 +1,23 @@
-def log_message(msg):
+def write_log(level, msg):
     with open("filename.log", "a") as log_file:
-        log_file.write("{0}\n".format(msg))
+        log_file.write("[{0}] {1}\n".format(level, msg))
 
 
 def critical(msg):
-    with open("filename.log", "a") as log_file:
-        log_file.write("[CRITICAL] {0}\n".format(msg))
+    write_log("CRITICAL", msg)
 
 
 def error(msg):
-    with open("filename.log", "a") as log_file:
-        log_file.write("[ERROR] {0}\n".format(msg))
+    write_log("ERROR", msg)
 
 
 def warn(msg):
-    with open("filename.log", "a") as log_file:
-        log_file.write("[WARN] {0}\n".format(msg))
+    write_log("WARN", msg)
 
 
 def info(msg):
-    with open("filename.log", "a") as log_file:
-        log_file.write("[INFO] {0}\n".format(msg))
+    write_log("INFO", msg)
 
 
 def debug(msg):
-    with open("filename.log", "a") as log_file:
-        log_file.write("[DEBUG] {0}\n".format(msg))
+    write_log("DEBUB", msg)
