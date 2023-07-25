@@ -1,5 +1,5 @@
-def write_log(level, msg):
-    with open("filename.log", "a") as log_file:
+def write_log(level, msg, filename="filename.log"):
+    with open(filename, "a") as log_file:
         log_file.write("[{0}] {1}\n".format(level, msg))
 
 
