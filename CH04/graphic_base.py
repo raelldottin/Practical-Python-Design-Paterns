@@ -1,10 +1,14 @@
 import pygame
-import time
 
-pygame.init()
-screen = pygame.display.set_mode((800, 600))
+window_dimensions = 800, 600
+screen = pygame.display.set_mode(window_dimensions)
 
-pygame.draw.rect(screen, (255, 0, 34), pygame.Rect(42, 15, 40, 32))
-pygame.display.flip()
+player_quits = False
 
-time.sleep(10)
+
+while not player_quits:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            player_quits = True
+
+    pygame.display.flip()
