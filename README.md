@@ -5,6 +5,7 @@ These are examples and solutions from the book Practical Python Design Patterns:
 ## Quick reference of patterns covered:
 
 - Singleton Pattern
+allows you to create only one instance of a class
 - Prototype Pattern
 - Factory Pattern
 - Builder Pattern
