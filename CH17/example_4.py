@@ -27,4 +27,38 @@ def stock_sync_strategy_system3():
     print("sending updates to third party system3")
 
 
-def send_transaction_strategy_system
+def send_transaction_strategy_system1(transaction):
+    print("send transaction to system1: {0!r}".format(transaction))
+
+
+def send_transaction_strategy_system2(transaction):
+    print("send transaction to system2: {0!r}".format(transaction))
+
+
+def send_transaction_strategy_system3(transaction):
+    print("send transaction to system3: {0!r}".format(transaction))
+
+
+def main():
+    transaction = (
+        {
+            "id": 1,
+            "items": [{"item_id": 1, "amount_purchased": 3, "value": 238}],
+        },
+    )
+
+    print("=" * 10)
+    sync_stock_items(stock_sync_strategy_system1)
+    send_transaction(transaction, send_transaction_strategy_system1)
+
+    print("=" * 10)
+    sync_stock_items(stock_sync_strategy_system2)
+    send_transaction(transaction, send_transaction_strategy_system2)
+
+    print("=" * 10)
+    sync_stock_items(stock_sync_strategy_system3)
+    send_transaction(transaction, send_transaction_strategy_system3)
+
+
+if __name__ == "__main__":
+    main()
