@@ -2,6 +2,8 @@
 
 These are examples and solutions from the book Practical Python Design Patterns: Pythonic Solutions to Commons Problems by Wessel Badenhorst (c) 2017
 
+This book provides all the constructs you would need to be proficent at Python. I believe it's a must-have for any SE that's employs Python.
+
 ## Quick reference of patterns covered:
 
 - Singleton Pattern
