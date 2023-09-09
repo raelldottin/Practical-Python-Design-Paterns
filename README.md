@@ -28,8 +28,6 @@ In this repository, you'll find examples and implementations of a wide range of 
 
 9. **Chain of Responsibility Pattern**
 
-10. **Composite Pattern**
-
 11. **Command Pattern**
 
 12. **Interpreter Pattern**
