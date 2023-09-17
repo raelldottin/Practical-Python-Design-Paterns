@@ -10,7 +10,7 @@ Welcome to the Practical Python Design Patterns repository! Here, you'll find pr
 
 In this repository, you'll find examples and implementations of a wide range of design patterns covered in the book. These patterns are powerful tools for solving common programming challenges efficiently. Here's a quick reference to the patterns you'll discover:
 
-1. **Singleton Pattern**
+1. **[Singleton Pattern](Single-Pattern)**
 
 2. **Prototype Pattern**
 
