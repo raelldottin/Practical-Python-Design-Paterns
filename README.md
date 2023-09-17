@@ -26,7 +26,7 @@ In this repository, you'll find examples and implementations of a wide range of 
 
 8. **[Proxy Pattern](Proxy-Pattern)**
 
-9. **[Chain of Responsibility Pattern](Chain-of-Responsibility Pattern)**
+9. **[Chain of Responsibility Pattern](Chain-of-Responsibility-Pattern)**
 
 11. **[Command Pattern](Command-Pattern)**
 
