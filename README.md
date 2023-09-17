@@ -10,43 +10,43 @@ Welcome to the Practical Python Design Patterns repository! Here, you'll find pr
 
 In this repository, you'll find examples and implementations of a wide range of design patterns covered in the book. These patterns are powerful tools for solving common programming challenges efficiently. Here's a quick reference to the patterns you'll discover:
 
-1. **[Singleton Pattern](Single-Pattern)**
+1. **[Singleton Pattern](Singleton-Pattern)**
 
-2. **Prototype Pattern**
+2. **[Prototype Pattern](Prototype-Pattern)**
 
-3. **Factory Pattern**
+3. **[Factory Pattern](Factory-Pattern)**
 
-4. **Builder Pattern**
+4. **[Builder Pattern](Builder-Pattern)**
 
-5. **Adapter Pattern**
+5. **[Adapter Pattern](Adapter-Pattern)**
 
-6. **Decorator Pattern**
+6. **[Decorator Pattern](Decorator-Pattern)**
 
-7. **Facade Pattern**
+7. **[Facade Pattern](Facade-Pattern)**
 
-8. **Proxy Pattern**
+8. **[Proxy Pattern](Proxy-Pattern)**
 
-9. **Chain of Responsibility Pattern**
+9. **[Chain of Responsibility Pattern](Chain-of-Responsibility Pattern)**
 
-11. **Command Pattern**
+11. **[Command Pattern](Command-Pattern)**
 
-12. **Interpreter Pattern**
+12. **[Interpreter Pattern](Interpreter-Pattern)**
 
-13. **Iterator Pattern**
+13. **[Iterator Pattern](Iterator-Pattern)**
 
-14. **Observer Pattern**
+14. **[Observer Pattern](Observer-Pattern)**
 
-15. **State Pattern**
+15. **[State Pattern](State-Pattern)**
 
-16. **Strategy Pattern**
+16. **[Strategy Pattern](Strategy-Pattern)**
 
-17. **Template Method Pattern**
+17. **[Template Method Pattern](Template-Method-Pattern)**
 
-18. **Visitor Pattern**
+18. **[Visitor Pattern](Visitor-Pattern)**
 
-19. **Model-View-Controller Pattern**
+19. **[Model-View-Controller Pattern](Model-View-Controller-Pattern)**
 
-20. **Publisher-Subscriber Pattern**
+20. **[Publisher-Subscriber Pattern](Publisher-Subscriber-Pattern)**
 
 ## Getting Started
 
