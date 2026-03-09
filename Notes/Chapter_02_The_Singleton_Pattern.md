@@ -49,7 +49,7 @@ Method: critcal() | error() | warn() | info() | debug()
 	Constraint: hard coded levels
 
 Class: SingletonObject
-	Problem: parameters object is used to define a singleton class
+	Problem: parameters object is used to define a singleton class and initialize the instance variable as None
 	Constraint: code in one part of your project may alter its global state and cause unexpected results in a completely unrelated piece of code
 	Class: __SingletonObject
 		Problem: a private class that should not be used outside of the original class definition
@@ -62,3 +62,94 @@ Class: SingletonObject
 			Constraint: the class defintion already has an instance of the private __SingletonObject returns the instance as the new object otherwise create a new object of it, store it in the class instance variable and return the new instance
 		Method: __getattr__() | __setattr__()
 			Problem: parameters self and name are used to allow the private class to read and write data to the instance class
+
+
+Exercises:
+
+
+1. Implement your own logger singleton.
+
+Class: Logger
+    Problem: parameters object is used to define a Logger class and initialize the instance variable as None
+	Constraint: code in one part of your project may alter its global state and cause unexpected results in a completely unrelated piece of code
+    Class: __Logger
+        Problem: a private class that should not be used outside of the original class definition
+        Method: __init__():
+            Problem: parameters self and filename are used to create an object with filename property set with the log filename
+		Method: __str__()
+			Problem: parameter self is used to returns the name of the instance and its log filename when the interface is used in a string data type
+		Method: __new__()
+			Problem: parameter cls, *args, **kwargs passes the class definition data and arguments from outer class and creates a new object 
+		Method: __getattr__()
+			Problem: parameters self and name are used to allow the private class to read data from the instance class
+		Method: __setattr__()
+			Problem: parameters self and name and value are used to allow the private class to write data to the instance class
+        Method: __write_log()
+            Problem: parameters self, level, msg are used to write a log message to a log file
+            Constraint: opens and closes the logfile each time it write a new message
+            Inverse: with context manager automatically calls close() when the code exits the indented block, even if an error occurs
+        Method: critcal() | error() | warn() | info() | debug()
+            Problem: parameters self, msg are used to write a log message using _write_log()
+            Constraint: hard coded levels - CRITICAL | ERROR | WARN | INFO | DEBUG
+
+Filename: loggerclass.py
+class Logger(object):
+  instance = None
+  class __Logger():
+    def __init__(self, filename):
+      self.filename = filename
+
+    def __str__(self):
+      return("{0!r} {1}".format(self, self.filename))
+
+    def __new__(cls, *args, **kwargs):
+      if not Logger.instance:
+        Logger.instance = Logger.__Logger(*args, **kwargs)
+
+      return(Logger.instance)
+
+    def __getattr__(self, name):
+      return(getattr(self.instance, name))
+
+    def __setattr__(self, name, value):
+      return(setattr(self.instance, name, value))
+
+    def __write_log(self, level, msg):
+      with open(self.filename, "a") as logfile:
+        logfile.write("[{0}] {1}\n".format(level, msg))
+
+    def critical(self, msg):
+      self.__write_log("CRITICAL", msg)
+
+    def error(self, msg):
+      self.__write_log("ERROR", msg)
+
+    def warn(self, msg):
+      self.__write_log("WARN", msg)
+
+    def info(self, msg):
+      self.__write_log("INFO", msg)
+
+    def debug(self, msg):
+      self.__write_log("DEBUG", msg)
+
+2. How would you create using the singleton pattern?
+Filename: new-script-with-loggerclass.py
+from loggerclass import Logger
+
+loggerobject = Logger("./classlogger.log")
+
+loggerobject.info("This is an info message")
+
+try:
+  a = 1 / 0
+except:
+  loggerobject.critical("Division by zero is not possible in mathematics")
+
+for e in ["CRITICAL", "ERROR", "WARN", "INFO", "DEBUG"]:
+    method = getattr(loggerobject, e.lower())
+    method("{0} log level message is sent!".format(e))
+
+anotherloggerobject = Logger("./differentlogger.log")
+print("Are they the same? {0}".format(loggerobject is anotherloggerobject))
+print("Active log file name: {0}".format(anotherloggerobject.filename))
