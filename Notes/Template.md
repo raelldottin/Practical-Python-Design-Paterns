@@ -24,3 +24,18 @@ Problem:
 Constraint: 
 Inverse: 
 
+Class:
+	Problem:
+	Constraint:
+	Class:
+		Problem:
+		Method:
+			Problem:
+		Method:
+			Problem:
+		Method:
+			Problem:
+			Constraint:
+		Method:
+			Problem:
+
