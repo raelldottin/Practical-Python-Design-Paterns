@@ -1,22 +1,16 @@
 """
-Build one screen: title, subtitle, one button
+Build a login screen. Email field, password field, login button. No validation. No logic. UI only.
 """
 import flet as ft
 
 def main(page: ft.Page):
-    page.title = "app"
-    page.appbar = ft.AppBar(
-        title=ft.Column(
-            [
-                ft.Text("title", size=20, weight=ft.FontWeight.BOLD),
-                ft.Text("subtitle", size=12),
-            ],
-            spacing=0,
-        )
-    )
     page.add(
-        ft.Button(
-            "Button"
+        ft.Row(
+        [
+            ft.TextField(label="Email", filled=True),
+            ft.TextField(label="Password", filled=True),
+            ft.Button("Login")
+        ],
         )
     )
 
