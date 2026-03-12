@@ -5,13 +5,16 @@ import flet as ft
 
 def main(page: ft.Page):
     page.add(
-        ft.Row(
+        ft.Container(
+            width=400,
+            height=800,
+            content=ft.Row(
         [
             ft.TextField(label="Email", filled=True),
             ft.TextField(label="Password", filled=True),
             ft.Button("Login")
         ],
-        )
+        ))
     )
 
 
